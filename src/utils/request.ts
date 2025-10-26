@@ -1,6 +1,8 @@
 import axios, { type AxiosError } from 'axios'
-import { message } from 'antd'
 import { hideLoading, showLoading } from '@/utils/loading'
+import type { Result } from '@/types/api.ts'
+import storage from '@/utils/storage.ts'
+import { message } from '@/utils/AntdGlobal.tsx'
 
 const instance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -32,10 +34,10 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   response => {
     hideLoading()
-    const data = response.data
+    const data: Result<never> = response.data
     if (data.code === 500001) {
       message.error(data.msg)
-      localStorage.removeItem('token')
+      storage.remove('token')
       location.href = '/login'
     } else if (data.code != 0) {
       message.error(data.msg)

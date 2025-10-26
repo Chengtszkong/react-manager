@@ -1,6 +1,6 @@
 import { Navigate, useRoutes } from 'react-router-dom'
 import Welcome from '@/views/Welcome.tsx'
-import Login from '@/views/Login.tsx'
+import Login from '@/views/login/Login.tsx'
 import Error404 from '@/views/404.tsx'
 import Error403 from '@/views/403.tsx'
 
