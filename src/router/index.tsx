@@ -3,15 +3,25 @@ import Welcome from '@/views/Welcome.tsx'
 import Login from '@/views/login/Login.tsx'
 import Error404 from '@/views/404.tsx'
 import Error403 from '@/views/403.tsx'
+import Layout from '@/layout/index.tsx'
 
 const router = [
   {
     path: '/',
-    element: <Welcome />
+    element: <Navigate to={'/welcome'} />
   },
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: '/welcome',
+        element: <Welcome />
+      }
+    ]
   },
   {
     path: '*',
