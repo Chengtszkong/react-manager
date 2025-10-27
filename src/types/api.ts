@@ -15,3 +15,12 @@ export namespace Login {
     password: string
   }
 }
+
+export namespace User {
+  export interface UserItem {
+    userId: number
+    username: string
+    avatar: string
+    role: number
+  }
+}
