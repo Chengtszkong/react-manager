@@ -9,33 +9,6 @@ import {
   renderRadarChart
 } from '@/views/dashboard/charts.ts'
 
-const items: DescriptionsProps['items'] = [
-  {
-    label: '用户ID',
-    children: <p>100001</p>
-  },
-  {
-    label: '邮箱',
-    children: <p>chengtszkong@outlook.com</p>
-  },
-  {
-    label: '状态',
-    children: <p>在职</p>
-  },
-  {
-    label: '手机号',
-    children: <p>12345678901</p>
-  },
-  {
-    label: '岗位',
-    children: <p>前端工程师</p>
-  },
-  {
-    label: '部门',
-    children: <p>大前端</p>
-  }
-]
-
 const reports = [
   { label: '司机数量', data: '100', unit: '个', color: '#f4864f' },
   { label: '总流水', data: '10000', unit: '元', color: '#887edc' },
@@ -45,6 +18,33 @@ const reports = [
 
 const Dashboard: React.FC = () => {
   const userInfo = useBearStore(state => state.userInfo)
+
+  const items: DescriptionsProps['items'] = [
+    {
+      label: '用户ID',
+      children: <p>{userInfo.userId}</p>
+    },
+    {
+      label: '邮箱',
+      children: <p>chengtszkong@outlook.com</p>
+    },
+    {
+      label: '状态',
+      children: <p>在职</p>
+    },
+    {
+      label: '手机号',
+      children: <p>12345678901</p>
+    },
+    {
+      label: '岗位',
+      children: <p>前端工程师</p>
+    },
+    {
+      label: '部门',
+      children: <p>大前端</p>
+    }
+  ]
 
   useEffect(() => {
     renderLineChart()

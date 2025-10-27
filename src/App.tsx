@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ConfigProvider, App as AntdApp } from 'antd'
 import Router from './router'
 import AntdGlobal from '@/utils/AntdGlobal.tsx'
-import './App.css'
+import './App.scss'
 
 function App() {
   return (

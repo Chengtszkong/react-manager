@@ -21,6 +21,5 @@ export namespace User {
     userId: number
     username: string
     avatar: string
-    role: number
   }
 }
