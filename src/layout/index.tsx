@@ -1,14 +1,16 @@
 import React from 'react'
+import styles from './index.module.scss'
 import { Layout, theme, Watermark } from 'antd'
 import NavHeader from '@/components/NavHeader'
 import NavFooter from '@/components/NavFooter'
 import SiderMenu from '@/components/Menu'
+import { Outlet } from 'react-router-dom'
 
-const { Header, Content, Footer, Sider } = Layout
+const { Header, Content, Sider } = Layout
 
 const App: React.FC = () => {
   const {
-    token: { colorBgContainer, borderRadiusLG }
+    token: { colorBgContainer }
   } = theme.useToken()
 
   return (
@@ -21,21 +23,12 @@ const App: React.FC = () => {
           <Header style={{ padding: 0, background: colorBgContainer }}>
             <NavHeader />
           </Header>
-          <Content style={{ margin: '24px 16px 0' }}>
-            <div
-              style={{
-                padding: 24,
-                minHeight: 360,
-                background: colorBgContainer,
-                borderRadius: borderRadiusLG
-              }}
-            >
-              content
+          <Content className={styles.content}>
+            <div className={styles.wrapper}>
+              <Outlet />
             </div>
-          </Content>
-          <Footer>
             <NavFooter />
-          </Footer>
+          </Content>
         </Layout>
       </Layout>
     </Watermark>

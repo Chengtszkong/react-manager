@@ -16,7 +16,7 @@ const NavFooter: React.FC = () => {
   ]
 
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <div>
         {items.map((item, index) => (
           <React.Fragment key={index}>
@@ -28,7 +28,7 @@ const NavFooter: React.FC = () => {
         ))}
       </div>
       <div>Copyright © 2025 All Rights Reserved.</div>
-    </div>
+    </footer>
   )
 }
 
