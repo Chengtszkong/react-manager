@@ -37,7 +37,6 @@ const SiderMenu: React.FC = () => {
     <>
       <div className={styles.logo} onClick={() => navigate('/welcome')}>
         <img src={logoPng} alt='logo' />
-        <span>货拉拉</span>
       </div>
       <Menu
         theme='dark'

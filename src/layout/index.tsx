@@ -26,9 +26,9 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <Watermark content={'Tszkong Cheng'}>
+    <Watermark content={''}>
       <Layout>
-        <Sider collapsible collapsed={collapsed}>
+        <Sider collapsed={collapsed}>
           <SiderMenu />
         </Sider>
         <Layout>
